@@ -12,10 +12,10 @@
         <h:outputStylesheet library="css" name="sistema.css" />
 	</h:head>
 
-	<h:body styleClass="wallpaper">
+	<h:body>
 		<p:ajaxStatus styleClass="ajax-status">
 			<f:facet name="start">
-				<h:graphicImage library="imagens" name="carregando.gif"/>
+<!-- 				<h:graphicImage library="imagens" name="carregando.gif"/> -->
 			</f:facet>
 			<f:facet name="complete">
 				<h:outputText value=""/>
@@ -23,7 +23,7 @@
 		</p:ajaxStatus>
 	
 		<header>
-			<div style="float: left">
+			<div style="float: left" >
 				<h:link outcome="/Home">
 <!-- 					<h:graphicImage library="imagens" name="logo-hibernate.png" /> -->
 				</h:link>
