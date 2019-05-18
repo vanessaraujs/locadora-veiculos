@@ -25,11 +25,12 @@ public class CadastroFabricanteBean implements Serializable {
 	private CadastroFabricanteService cadastroFabricanteService;
 
 	private Fabricante fabricante;
-
+	
 	public void salvar() {
 		try {
 			this.cadastroFabricanteService.salvar(fabricante);
 			FacesUtil.addSuccessMessage("Fabricante salvo com sucesso!");
+			this.limpar();
 		} catch (NegocioException e) {
 			FacesUtil.addErrorMessage(e.getMessage());
 		}
