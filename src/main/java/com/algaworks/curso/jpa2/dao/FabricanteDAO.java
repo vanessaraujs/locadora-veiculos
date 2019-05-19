@@ -10,15 +10,15 @@ import com.algaworks.curso.jpa2.model.Fabricante;
 import com.algaworks.curso.jpa2.service.NegocioException;
 import com.algaworks.curso.jpa2.util.jpa.Transactional;
 
-public class FabricanteDAO implements Serializable{
-	
+public class FabricanteDAO implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Inject
 	private EntityManager em;
-	
+
 	public void salvar(Fabricante fabricante) {
-		em.persist(fabricante);
+		em.merge(fabricante);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -28,8 +28,12 @@ public class FabricanteDAO implements Serializable{
 
 	@Transactional
 	public void excluir(Fabricante fabricante) throws NegocioException {
-			fabricante = em.find(Fabricante.class, fabricante.getCodigo());
-			em.remove(fabricante);
-			em.flush();
+		fabricante = em.find(Fabricante.class, fabricante.getCodigo());
+		em.remove(fabricante);
+		em.flush();
+	}
+
+	public Fabricante buscarPeloCodigo(Long codigo) {
+		return em.find(Fabricante.class, codigo);
 	}
 }
