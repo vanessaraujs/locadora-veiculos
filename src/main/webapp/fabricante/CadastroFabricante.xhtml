@@ -6,14 +6,14 @@
     xmlns:p="http://primefaces.org/ui"
     xmlns:o="http://omnifaces.org/ui">
 
-    <ui:define name="titulo">Novo fabricante</ui:define>
+    <ui:define name="titulo">Novo Fabricante</ui:define>
     
     <ui:define name="corpo">
     	<f:metadata>
 			<o:viewParam name="fabricante" value="#{cadastroFabricanteBean.fabricante}" />
 		</f:metadata>
     
-    	<h1>Novo fabricante</h1>
+    	<h1>Novo Fabricante</h1>
     	
     	<h:form id="frmCadastro">
     		<p:messages id="messages" autoUpdate="true" closable="true" />
@@ -23,7 +23,7 @@
 	    			<p:commandButton value="Salvar" id="botaoSalvar" action="#{cadastroFabricanteBean.salvar}" update="frmCadastro"/>
 	    		</p:toolbarGroup>
 	    		<p:toolbarGroup align="right">
-					<p:button value="Pesquisa" />
+					<p:button value="Pesquisa"  outcome="/fabricante/PesquisaFabricantes" />
 				</p:toolbarGroup>
 	    	</p:toolbar>
 	    	

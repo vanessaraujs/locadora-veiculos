@@ -9,7 +9,7 @@
 	<h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><ui:insert name="titulo">Sistema de Locadora de Veículo</ui:insert></title>
-        <h:outputStylesheet library="css" name="sistema.css" />
+        <h:outputStylesheet library="css" name="sistema.css"/>
 	</h:head>
 
 	<h:body>
@@ -33,7 +33,7 @@
 				<h:form style="display: inline-block">
 					<p:menubar styleClass="menu-sistema"  style="background-color: #A80000 !important;">
 						<p:submenu label="Cadastros" >
-							<p:menuitem value="Fabricante" />
+							<p:menuitem value="Fabricante"  outcome="/fabricante/PesquisaFabricantes.xhtml" />
 							<p:menuitem value="Modelo Carro"  />
 							<p:menuitem value="Acessório" />
 							<p:menuitem value="Carro" />

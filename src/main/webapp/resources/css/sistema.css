@@ -7,7 +7,7 @@ body {
 	font-weight: normal;
 }
 
-.wallpaper{
+.wallpaper {
 	background-position-x: 50px, center;
     background: url(#{resource['imagens:carro.jpg']});
 }
