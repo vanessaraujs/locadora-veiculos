@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceException;
 
 import com.algaworks.curso.jpa2.model.Fabricante;
 import com.algaworks.curso.jpa2.service.NegocioException;
@@ -29,8 +30,12 @@ public class FabricanteDAO implements Serializable {
 	@Transactional
 	public void excluir(Fabricante fabricante) throws NegocioException {
 		fabricante = em.find(Fabricante.class, fabricante.getCodigo());
-		em.remove(fabricante);
-		em.flush();
+		try {
+			em.remove(fabricante);
+			em.flush();			
+		} catch (PersistenceException e) {
+			throw new NegocioException("Fabricante Não Pode Ser Excluído. ");
+		}
 	}
 
 	public Fabricante buscarPeloCodigo(Long codigo) {
