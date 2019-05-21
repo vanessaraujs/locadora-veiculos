@@ -30,7 +30,7 @@ public class PesquisaFabricanteBean implements Serializable {
 	public List<Fabricante> getFabricantes() {
 		return fabricantes;
 	}
-	
+
 	public Fabricante getFabricanteSelecionado() {
 		return fabricanteSelecionado;
 	}

@@ -32,8 +32,8 @@ public class CadastroFabricanteBean implements Serializable {
 			FacesUtil.addErrorMessage(e.getMessage());
 		}
 	}
-
-	//@PostConstruct
+	
+	@PostConstruct
 	public void init() {
 		this.limpar();
 	}
