@@ -1,5 +1,6 @@
 package com.algaworks.curso.jpa2.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -8,8 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Acessorio {
+public class Acessorio implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2427028383023883913L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;

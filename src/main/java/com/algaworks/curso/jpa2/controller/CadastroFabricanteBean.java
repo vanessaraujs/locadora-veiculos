@@ -2,6 +2,7 @@ package com.algaworks.curso.jpa2.controller;
 
 import java.io.Serializable;
 
+import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
@@ -14,6 +15,7 @@ import com.algaworks.curso.jpa2.util.jsf.FacesUtil;
 
 @Named
 @ViewScoped
+@ManagedBean
 public class CadastroFabricanteBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;

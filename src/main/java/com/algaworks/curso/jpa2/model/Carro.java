@@ -1,5 +1,6 @@
 package com.algaworks.curso.jpa2.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
@@ -13,8 +14,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Carro {
+public class Carro implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 822500554640788459L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;

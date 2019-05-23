@@ -1,5 +1,6 @@
 package com.algaworks.curso.jpa2.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -9,8 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ModeloCarro {
+public class ModeloCarro implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2309770129779579332L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;

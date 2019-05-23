@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
@@ -16,6 +17,7 @@ import com.algaworks.curso.jpa2.util.jsf.FacesUtil;
 
 @Named
 @ViewScoped
+@ManagedBean
 public class PesquisaFabricanteBean implements Serializable {
 
 	private static final long serialVersionUID = -2171621327030076033L;
