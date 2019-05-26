@@ -3,6 +3,7 @@ package com.algaworks.curso.jpa2.controller;
 import java.io.Serializable;
 
 import javax.annotation.ManagedBean;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -33,6 +34,7 @@ public class CadastroAcessorioBean implements Serializable {
 		this.limpar();
 	}
 
+	@PostConstruct
 	public void init() {
 		this.limpar();
 	}
