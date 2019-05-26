@@ -16,10 +16,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Carro implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 822500554640788459L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;

@@ -11,10 +11,8 @@ import javax.persistence.Id;
 @Entity
 public class Acessorio implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2427028383023883913L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;

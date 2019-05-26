@@ -27,18 +27,19 @@ public class FabricanteDAO implements Serializable {
 		return em.createQuery("from Fabricante").getResultList();
 	}
 
+	public Fabricante buscarPeloCodigo(Long codigo) {
+		return em.find(Fabricante.class, codigo);
+	}
+
 	@Transactional
 	public void excluir(Fabricante fabricante) throws NegocioException {
 		fabricante = em.find(Fabricante.class, fabricante.getCodigo());
 		try {
 			em.remove(fabricante);
-			em.flush();			
+			em.flush();
 		} catch (PersistenceException e) {
 			throw new NegocioException("Fabricante Não Pode Ser Excluído. ");
 		}
 	}
 
-	public Fabricante buscarPeloCodigo(Long codigo) {
-		return em.find(Fabricante.class, codigo);
-	}
 }
