@@ -27,7 +27,7 @@ public class Carro implements Serializable{
 	private BigDecimal valorDiaria;
 	
 	@ManyToOne
-	@JoinColumn(name = "codigo_modelo")
+	@JoinColumn(name = "codigoModelo")
 	private ModeloCarro modeloCarro;
 	
 	@ManyToMany

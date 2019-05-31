@@ -12,10 +12,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class ModeloCarro implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2309770129779579332L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;

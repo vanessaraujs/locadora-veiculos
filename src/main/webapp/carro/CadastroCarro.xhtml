@@ -32,11 +32,14 @@
 			    <p:inputText id="codigo" size="20" maxlength="20" value="#{cadastroCarroBean.carro.codigo}" readonly="true"/>
 			    
 			    <p:outputLabel value="Modelo Carro" for="modeloCarro"/>
-	    		<p:selectOneMenu id="modeloCarro" value="#{cadastroCarroBean.carro.modelo}">
+	    		<p:selectOneMenu id="modeloCarro" value="#{cadastroCarroBean.carro.modeloCarro}">
 	    			<f:selectItem itemLabel="Selecione o modelo" />
 	    			<f:selectItems value="#{cadastroCarroBean.modelosCarros}" var="modelosCarros" 
 						itemLabel="#{modelosCarros.descricao}" itemValue="#{modelosCarros}"/>
 	    		</p:selectOneMenu>
+			    
+			    <p:outputLabel value="Chassi" for="chassi"/>
+			    <p:inputText id="chassi" size="20" maxlength="20" value="#{cadastroCarroBean.carro.chassi}"/>
 			    
 			    <p:outputLabel value="Placa" for="placa"/>
 			    <p:inputText id="placa" size="20" maxlength="20" value="#{cadastroCarroBean.carro.placa}"/>
