@@ -38,7 +38,13 @@ public class CarroDAO implements Serializable {
 			em.remove(carro);
 			em.flush();
 		} catch (PersistenceException e) {
-			throw new NegocioException("O Carro Não Pode Ser Excluído!");
+			throw new NegocioException("Carro Não Pode Ser Excluído!");
 		}
 	}
+
+	public Carro buscarCarroComAcessorio(Long codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
