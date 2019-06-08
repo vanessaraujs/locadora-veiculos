@@ -30,7 +30,7 @@ public class CarroDAO implements Serializable {
 	public List<Carro> buscarTodos() {
 		return em.createQuery("from Carro").getResultList();
 	}
-	
+
 	@Transactional
 	public void excluir(Carro carro) throws NegocioException {
 		carro = buscarPeloCodigo(carro.getCodigo());
@@ -42,8 +42,7 @@ public class CarroDAO implements Serializable {
 		}
 	}
 
-	public Carro buscarCarroComAcessorio(Long codigo) {
-		// TODO Auto-generated method stub
+	public Carro buscarCarroComAcessorios(Long codigo) {
 		return null;
 	}
 

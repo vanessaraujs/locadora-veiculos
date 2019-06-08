@@ -9,7 +9,7 @@ import com.algaworks.curso.jpa2.dao.AcessorioDAO;
 import com.algaworks.curso.jpa2.model.Acessorio;
 import com.algaworks.curso.jpa2.util.cdi.CDIServiceLocator;
 
-@FacesConverter("acessorioConverter")
+@FacesConverter(forClass= Acessorio.class, value = "acessorioConverter")
 public class AcessorioConverter implements Converter {
 
 	private AcessorioDAO acessorioDAO;

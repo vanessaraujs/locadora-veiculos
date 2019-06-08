@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,10 +15,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Carro implements Serializable{
+public class Carro implements Serializable {
 
 	private static final long serialVersionUID = 822500554640788459L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
@@ -25,12 +26,12 @@ public class Carro implements Serializable{
 	private String cor;
 	private String chassi;
 	private BigDecimal valorDiaria;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "codigoModelo")
 	private ModeloCarro modeloCarro;
-	
-	@ManyToMany
+
+	@ManyToMany(fetch = FetchType.LAZY)
 	private List<Acessorio> acessorios;
 
 	public Long getCodigo() {
