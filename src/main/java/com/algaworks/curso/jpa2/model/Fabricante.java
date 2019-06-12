@@ -11,10 +11,8 @@ import javax.persistence.Id;
 @Entity
 public class Fabricante implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4911571536840695089L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;

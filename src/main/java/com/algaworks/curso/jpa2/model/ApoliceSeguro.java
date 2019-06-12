@@ -7,8 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "apolice_seguro")
 public class ApoliceSeguro implements Serializable {
 
 	private static final long serialVersionUID = 7736242923129382573L;

@@ -1,6 +1,7 @@
 package com.algaworks.curso.jpa2.controller;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.ManagedBean;
@@ -10,6 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.algaworks.curso.jpa2.dao.FabricanteDAO;
+import com.algaworks.curso.jpa2.model.Categoria;
 import com.algaworks.curso.jpa2.model.Fabricante;
 import com.algaworks.curso.jpa2.model.ModeloCarro;
 import com.algaworks.curso.jpa2.service.CadastroModeloCarroService;
@@ -26,7 +28,9 @@ public class CadastroModeloCarroBean implements Serializable {
 	private ModeloCarro modeloCarro;
 
 	private List<Fabricante> fabricantes;
-
+	
+	private List<Categoria> categorias;
+	
 	@Inject
 	private CadastroModeloCarroService cadastroModeloCarroService;
 
@@ -47,6 +51,7 @@ public class CadastroModeloCarroBean implements Serializable {
 	public void init() {
 		this.limpar();
 		this.fabricantes = fabricanteDAO.buscarTodos();
+		this.categorias = Arrays.asList(Categoria.values());
 	}
 
 	public void limpar() {
@@ -64,4 +69,9 @@ public class CadastroModeloCarroBean implements Serializable {
 	public List<Fabricante> getFabricantes() {
 		return fabricantes;
 	}
+
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
 }

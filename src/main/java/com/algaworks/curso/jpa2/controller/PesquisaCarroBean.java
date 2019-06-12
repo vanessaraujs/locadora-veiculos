@@ -27,7 +27,6 @@ public class PesquisaCarroBean implements Serializable {
 	private List<Carro> carros = new ArrayList<>();
 	private Carro carroSelecionado;
 
-	@SuppressWarnings("unused")
 	public List<Carro> getCarros() {
 		return carros;
 	}

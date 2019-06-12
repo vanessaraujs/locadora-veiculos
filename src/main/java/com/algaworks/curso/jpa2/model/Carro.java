@@ -6,13 +6,14 @@ import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Carro implements Serializable {
@@ -28,11 +29,23 @@ public class Carro implements Serializable {
 	private BigDecimal valorDiaria;
 
 	@ManyToOne
-	@JoinColumn(name = "codigoModelo")
+	@JoinColumn(name = "codigo_modelo")
 	private ModeloCarro modeloCarro;
 
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany
+	@JoinTable(name = "carro_acessorio", joinColumns = @JoinColumn(name = "codigo_carro"), inverseJoinColumns = @JoinColumn(name = "codigo_acessorio"))
 	private List<Acessorio> acessorios;
+
+	@OneToMany(mappedBy = "carro")
+	private List<Aluguel> alugueis;
+
+	public List<Aluguel> getAlugueis() {
+		return alugueis;
+	}
+
+	public void setAlugueis(List<Aluguel> alugueis) {
+		this.alugueis = alugueis;
+	}
 
 	public Long getCodigo() {
 		return codigo;

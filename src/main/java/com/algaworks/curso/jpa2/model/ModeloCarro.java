@@ -4,12 +4,16 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "modelo_carro")
 public class ModeloCarro implements Serializable{
 
 	private static final long serialVersionUID = 2309770129779579332L;
@@ -20,6 +24,8 @@ public class ModeloCarro implements Serializable{
 	private String descricao;
 	@ManyToOne
 	private Fabricante fabricante;
+	@Enumerated(EnumType.STRING)
+	private Categoria categoria;
 
 	public Long getCodigo() {
 		return codigo;
@@ -43,6 +49,14 @@ public class ModeloCarro implements Serializable{
 
 	public void setFabricante(Fabricante fabricante) {
 		this.fabricante = fabricante;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
 	@Override
