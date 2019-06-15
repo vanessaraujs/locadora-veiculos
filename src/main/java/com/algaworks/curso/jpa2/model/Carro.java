@@ -3,9 +3,9 @@ package com.algaworks.curso.jpa2.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,7 +32,7 @@ public class Carro implements Serializable {
 	@JoinColumn(name = "codigo_modelo")
 	private ModeloCarro modeloCarro;
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "carro_acessorio", joinColumns = @JoinColumn(name = "codigo_carro"), inverseJoinColumns = @JoinColumn(name = "codigo_acessorio"))
 	private List<Acessorio> acessorios;
 
@@ -105,18 +105,32 @@ public class Carro implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(chassi);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Carro other = (Carro) obj;
-		return Objects.equals(chassi, other.chassi);
+		if (codigo == null) {
+			if (other.codigo != null) {
+				return false;
+			}
+		} else if (!codigo.equals(other.codigo)) {
+			return false;
+		}
+		return true;
 	}
+
 }

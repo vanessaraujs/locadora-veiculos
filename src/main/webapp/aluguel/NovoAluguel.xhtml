@@ -29,21 +29,21 @@
 						itemLabel="#{carro.modeloCarro.descricao}: #{carro.placa}" itemValue="#{carro}"/>
 	    		</p:selectOneMenu>
 	    		
-	    		<p:outputLabel value="Valor total" for="valorTotal"/>
+	    		<p:outputLabel value="Valor Total" for="valorTotal"/>
 	    		<p:inputText id="valorTotal" size="20" maxlength="80" value="#{novoAluguelBean.aluguel.valorTotal}"/>
 	    	</p:panelGrid>
 	    	
-	    	<h:outputText value="Dados da apólice de seguro" style="font-size: 18px; display: block; margin-top: 20px"/>
+	    	<h:outputText value="Apólice de seguro" style="font-size: 18px; display: block; margin-top: 20px"/>
 	    	
 	    	<p:panelGrid columns="2" id="painelApolice" style="width: 100%; margin-top: 20px"
 	    			columnClasses="rotulo, campo">
-		    	<p:outputLabel value="Proteção terceiro" for="protecaoTerceiro"/>
+		    	<p:outputLabel value="Proteção Terceiro" for="protecaoTerceiro"/>
     			<p:selectBooleanCheckbox id="protecaoTerceiro" value="#{novoAluguelBean.aluguel.apoliceSeguro.protecaoTerceiro}"/>
     			
-    			<p:outputLabel value="Proteção causas naturais" for="protecaoCausasNaturais"/>
+    			<p:outputLabel value="Proteção Causas Naturais" for="protecaoCausasNaturais"/>
     			<p:selectBooleanCheckbox id="protecaoCausasNaturais" value="#{novoAluguelBean.aluguel.apoliceSeguro.protecaoCausasNaturais}"/>
     			
-    			<p:outputLabel value="Proteção roubo" for="protecaoRoubo"/>
+    			<p:outputLabel value="Proteção Roubo" for="protecaoRoubo"/>
     			<p:selectBooleanCheckbox id="protecaoRoubo" value="#{novoAluguelBean.aluguel.apoliceSeguro.protecaoRoubo}"/>
     			
     			<p:outputLabel value="Valor da Franquia" for="valorFranquia"/>
