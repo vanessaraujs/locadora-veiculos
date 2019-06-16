@@ -43,7 +43,7 @@ public class PesquisaCarroBean implements Serializable {
 		try {
 			carroDAO.excluir(carroSelecionado);
 			this.carros.remove(carroSelecionado);
-			FacesUtil.addSuccessMessage("Carro " + carroSelecionado.getModeloCarro() + "Excluído com Sucesso!");
+			FacesUtil.addSuccessMessage("Carro " + carroSelecionado.getModeloCarro().getDescricao() + " Excluído com Sucesso!");
 		} catch (NegocioException e) {
 			FacesUtil.addErrorMessage(e.getMessage());
 		}

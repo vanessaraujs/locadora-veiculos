@@ -36,9 +36,10 @@
 		    		<p:column headerText="Cor">
 		    			<h:outputText value="#{carro.cor}" />
 		    		</p:column>
-		    		<p:column headerText="Valor diária">
+		    		<p:column headerText="Valor Diária">
 		    			<h:outputText value="#{carro.valorDiaria}" />
 		    		</p:column>
+		    		
 		    		<p:column headerText="Acessórios" style="width: 100px; text-align: center">
 		    			<p:commandButton icon="ui-icon-extlink" title="Acessórios" action="#{pesquisaCarroBean.buscarCarroComAcessorios}"
 		    					process="@this" oncomplete="mostraAcessorios.show()" update=":frmPesquisa:mostraAcessoriosDialog">
@@ -69,7 +70,7 @@
     					rendered="#{not empty pesquisaCarroBean.carroSelecionado.acessorios}">
     				#{acessorio.descricao}
     			</p:dataList>
-    			<h:outputText value="Nenhum acessório" rendered="#{empty pesquisaCarroBean.carroSelecionado.acessorios}"/>
+    			<h:outputText value="Nenhum Acessório" rendered="#{empty pesquisaCarroBean.carroSelecionado.acessorios}"/>
 			</p:dialog>
 	    	
 	    </h:form>

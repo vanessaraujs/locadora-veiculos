@@ -31,6 +31,12 @@
 	    		
 	    		<p:outputLabel value="Valor Total" for="valorTotal"/>
 	    		<p:inputText id="valorTotal" size="20" maxlength="80" value="#{novoAluguelBean.aluguel.valorTotal}"/>
+	    		
+	    		<p:outputLabel value="Data da Locação" for="dataLocacao"/>
+	    		<p:calendar id="dataLocacao" size="20" value="#{novoAluguelBean.aluguel.dataLocacao}" pattern="dd/MM/yyyy HH:mm" stepMinute="10"/>
+	    		
+	    		<p:outputLabel value="Data da Devolução" for="dataDevolucao"/>
+	    		<p:calendar id="dataDevolucao" size="20" value="#{novoAluguelBean.aluguel.dataDevolucao}" pattern="dd/MM/yyyy HH:mm" stepMinute="10"/>
 	    	</p:panelGrid>
 	    	
 	    	<h:outputText value="Apólice de seguro" style="font-size: 18px; display: block; margin-top: 20px"/>

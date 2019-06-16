@@ -2,6 +2,7 @@ package com.algaworks.curso.jpa2.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -29,7 +30,10 @@ public class Aluguel implements Serializable {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "codigo_apolice_seguro")
 	private ApoliceSeguro apoliceSeguro;
-
+	
+	private Date dataLocacao;
+	private Date dataDevolucao;
+	
 	public Long getCodigo() {
 		return codigo;
 	}
@@ -60,6 +64,22 @@ public class Aluguel implements Serializable {
 
 	public void setApoliceSeguro(ApoliceSeguro apoliceSeguro) {
 		this.apoliceSeguro = apoliceSeguro;
+	}
+
+	public Date getDataLocacao() {
+		return dataLocacao;
+	}
+
+	public void setDataLocacao(Date dataLocacao) {
+		this.dataLocacao = dataLocacao;
+	}
+
+	public Date getDataDevolucao() {
+		return dataDevolucao;
+	}
+
+	public void setDataDevolucao(Date dataDevolucao) {
+		this.dataDevolucao = dataDevolucao;
 	}
 
 	@Override
