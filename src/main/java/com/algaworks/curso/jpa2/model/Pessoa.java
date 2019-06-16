@@ -34,7 +34,7 @@ public abstract class Pessoa implements Serializable {
 	private Date dataNascimento;
 	@Enumerated(EnumType.STRING)
 	private Sexo sexo;
-
+	
 	public Long getCodigo() {
 		return codigo;
 	}

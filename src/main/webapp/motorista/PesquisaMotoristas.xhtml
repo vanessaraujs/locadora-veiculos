@@ -6,7 +6,8 @@
     xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="titulo">Pesquisa de Motorista</ui:define>
-        
+    
+    <ui:define name="corpo">
     	<h1>Pesquisa de Motorista</h1>
     	
     	<h:form id="frmPesquisa">
@@ -27,17 +28,17 @@
 		    		<p:column headerText="Nome">
 		    			<h:outputText value="#{motorista.nome}" />
 		    		</p:column>
-		    		<p:column headerText="Data de Nascimento">
-		    			<h:outputText value="#{motorista.dataNascimento}" />
-		    		</p:column>
 		    		<p:column headerText="Sexo">
 		    			<h:outputText value="#{motorista.sexo.descricao}" />
+		    		</p:column>
+		    		<p:column headerText="Data de nascimento">
+		    			<h:outputText value="#{motorista.dataNascimento}"/>
 		    		</p:column>
 		    		<p:column headerText="CPF">
 		    			<h:outputText value="#{motorista.cpf}" />
 		    		</p:column>
 		    		<p:column headerText="CNH">
-		    			<h:outputText value="#{motorista.numeroCNH}" />
+		    			<h:outputText value="#{motorista.cnh}" />
 		    		</p:column>
 		    		<p:column style="width: 100px; text-align: center">
 		    			<p:button outcome="CadastroMotorista" icon="ui-icon-pencil" title="Editar">

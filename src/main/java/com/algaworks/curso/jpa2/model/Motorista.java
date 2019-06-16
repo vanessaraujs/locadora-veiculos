@@ -18,4 +18,6 @@ public class Motorista extends Pessoa {
 	public void setCnh(String cnh) {
 		this.cnh = cnh;
 	}
+	
+	
 }
