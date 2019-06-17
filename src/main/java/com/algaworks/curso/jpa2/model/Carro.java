@@ -28,7 +28,7 @@ public class Carro implements Serializable {
 	private String chassi;
 	private BigDecimal valorDiaria;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "codigo_modelo")
 	private ModeloCarro modeloCarro;
 
